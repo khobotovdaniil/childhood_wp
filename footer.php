@@ -11,7 +11,8 @@
                 <div class="reply__title">
                     Оставьте ваш вопрос здесь
                 </div>
-                <form action="#">
+                  <?php echo do_shortcode('[contact-form-7 id="150" title="Форма вопроса"]'); ?>
+                <!-- <form action="#">
                     <div class="reply__wrapper">
                         <div>
                             <label for="name">Ваше имя <span>*</span></label>
@@ -100,7 +101,7 @@
                     </svg>
                     
                     <div class="reply__close">&times</div>
-                </form>
+                </form> -->
             </div>
         </div>
         <footer>

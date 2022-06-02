@@ -405,7 +405,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="title contacts__minititle">Оставьте ваш отзыв</div>
-                        <form action="#" class="contacts__feed">
+                        <!-- <form action="#" class="contacts__feed">
                             <label for="feedname">
                                 Ваше имя <span>*</span>
                             </label>
@@ -485,7 +485,10 @@
                                 </style>
                             </svg>
 
-                        </form>
+                        </form> -->
+                        <div class="contacts__feed">
+                            <?php echo do_shortcode('[contact-form-7 id="149" title="Форма отзывов"]'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="row mt70">
