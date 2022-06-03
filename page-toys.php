@@ -10,7 +10,7 @@ Template Name: Игрушки
 
 <div class="toys">
     <div class="container">
-        <h2 class="subtitle">Мягкие игрушки</h2>
+        <h2 class="subtitle"><a href="<?php echo get_category_link( 4 ); ?>">Мягкие игрушки</a></h2>
             <div class="toys__wrapper">
                 <?php
                     // параметры по умолчанию
@@ -48,14 +48,14 @@ Template Name: Игрушки
                 ?>
 
             </div>
-        <h2 class="subtitle">Развивающие игрушки</h2>
+        <h2 class="subtitle"><a href="<?php echo get_category_link( 5 ); ?>">Развивающие игрушки</a></h2>
             <div class="toys__wrapper">
 
                 <?php
                     // параметры по умолчанию
                     $posts = get_posts( array(
                         'numberposts' => -1,
-                        'category_name'    => 'education_toys',
+                        'category_name'    => 'edu_toys',
                         'orderby'     => 'date',
                         'order'       => 'ASC',
                         'post_type'   => 'post',

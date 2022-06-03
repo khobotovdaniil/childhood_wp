@@ -1,36 +1,22 @@
 <?php
-get_header();
+/*
+Template Name: Категория мягкие игрушки
+*/
 ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+<?php
+    get_header();
+?>
 
-            <?php
-            while ( have_posts() ) :
-                the_post();
-
-                get_template_part( 'template-parts/content', get_post_type() );
-
-            endwhile; // End of the loop.
-            ?>
-
-        </main><!-- #main -->
-    </div><!-- #primary -->
-
-    <div class="container toys">
-        <h2 class="subtitle">Возможно вам понравится</h2>
+<div class="toys">
+    <div class="container">
+        <h2 class="subtitle">Мягкие игрушки</h2>
             <div class="toys__wrapper">
                 <?php
-                    if (in_category('soft_toys')) {
-                        $category = 'soft_toys';
-                    } else {
-                        $category = 'edu_toys';
-                    }
-
                     // параметры по умолчанию
                     $posts = get_posts( array(
-                        'numberposts' => 3,
-                        'category_name'    => $category,
+                        'numberposts' => -1,
+                        'category_name'    => 'soft_toys',
                         'orderby'     => 'date',
                         'order'       => 'ASC',
                         'post_type'   => 'post',
@@ -62,8 +48,16 @@ get_header();
                 ?>
 
             </div>
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="toys__alert">
+                    <?php the_field('toys_text'); ?>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
 <?php
-get_footer();
+    get_footer();
 ?>

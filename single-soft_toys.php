@@ -1,4 +1,11 @@
 <?php
+/*
+Template Name: Шаблон для мягких игрушек
+Template Post Type: post, soft_toys
+*/
+?>
+
+<?php
 get_header();
 ?>
 
@@ -21,16 +28,10 @@ get_header();
         <h2 class="subtitle">Возможно вам понравится</h2>
             <div class="toys__wrapper">
                 <?php
-                    if (in_category('soft_toys')) {
-                        $category = 'soft_toys';
-                    } else {
-                        $category = 'edu_toys';
-                    }
-
                     // параметры по умолчанию
                     $posts = get_posts( array(
                         'numberposts' => 3,
-                        'category_name'    => $category,
+                        'category_name'    => 'soft_toys',
                         'orderby'     => 'date',
                         'order'       => 'ASC',
                         'post_type'   => 'post',
