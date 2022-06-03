@@ -2,7 +2,9 @@
 add_action('wp_enqueue_scripts', 'childhood_scripts');
 
 function childhood_scripts() {
-    wp_enqueue_style( 'childhoot-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'childhood-style', get_stylesheet_uri() );
+    wp_register_style( 'childhood-wp_style', get_template_directory_uri() . '/css/wp_style.css');
+    wp_enqueue_style( 'childhood-wp_style' );
     wp_enqueue_script( 'childhood-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
     wp_deregister_script( 'jquery' );
     wp_register_script( 'jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' );
@@ -19,6 +21,10 @@ function filter_nav_menu_link_attributes ($atts, $item, $args) {
         $atts['class'] = 'header__nav-item';
 
         if ($item->current) {
+            $atts['class'] .= ' header__nav-item-active';
+        }
+
+        if ($item->ID === 173 && (in_category('soft_toys') || in_category('education_toys')) ) {
             $atts['class'] .= ' header__nav-item-active';
         }
     };
